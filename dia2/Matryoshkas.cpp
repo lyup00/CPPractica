@@ -19,14 +19,20 @@ int main() {
         };
         set <int> cantidad(lista.begin(), lista.end());
 
-        set <int> numeros;
-        for (int e=*lista.begin(); e<=*lista.rbegin(); ++e){
-            numeros.insert(e);
-        };
-
         vector <int> cosas;
-        for (int f: numeros){
-            cosas.push_back(lista.count(f));
+        int anterior = *lista.begin(); 
+        
+        for (int y: cantidad){
+            while (anterior < y - 1){
+                cosas.push_back(0);
+                anterior++;
+            }
+            
+            auto rango = lista.equal_range(y);
+            int cuantos = distance(rango.first, rango.second);
+            cosas.push_back(cuantos);
+            
+            anterior = y;
         }
 
         int tengolistas = 0;
@@ -41,7 +47,7 @@ int main() {
                 }
                 else if (cosas[p] == 0){
                     if (empezo){
-                    break;
+                        break;
                     }
                 };
             };
@@ -51,4 +57,4 @@ int main() {
         cout<<tengolistas<<"\n";
     };
     return 0;
-};
+}
