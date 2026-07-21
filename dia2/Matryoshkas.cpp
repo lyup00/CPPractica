@@ -9,25 +9,43 @@ int main() {
         int largo, numrs;
         cin>>largo;
 
-        vector <int> lista;
+        multiset <int> lista;
         for (int k=0; k<largo; ++k){
             cin>>numrs;
-            lista.push_back(numrs);
+            lista.insert(numrs);
+        };
+        set <int> cantidad(lista.begin(), lista.end());
+
+        set <int> numeros;
+        for (int e=*lista.begin(); e<=*lista.rbegin(); ++e){
+            numeros.insert(e);
         };
 
-        multiset <int> cantidad;
-        for (int n: lista){
-            cantidad.insert(n);
-        };
+        vector <int> cosas;
+        for (int f: numeros){
+            cosas.push_back(lista.count(f));
+        }
 
-        int mayor=0;
-        for (int f: lista){
-            int hola = cantidad.count(f);
-            if (hola > mayor){
-                mayor = hola;
+        int tengolistas = 0;
+        while (largo>0){
+            int tengo = 0;
+            bool empezo = false;
+            for (int p=0; p<cosas.size(); ++p){
+                if (cosas[p] != 0){
+                    cosas[p] -= 1;
+                    tengo++;
+                    empezo = true;
+                }
+                else if (cosas[p] == 0){
+                    if (empezo){
+                    break;
+                    }
+                };
             };
+            largo -= tengo;
+            tengolistas += 1;
         };
-        cout<<mayor<<endl;
+        cout<<tengolistas<<endl;
     };
     return 0;
-}
+};
