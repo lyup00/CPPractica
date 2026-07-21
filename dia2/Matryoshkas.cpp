@@ -2,6 +2,9 @@
 using namespace std;
 
 int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
     int veces;
     cin>>veces;
 
@@ -45,7 +48,7 @@ int main() {
             largo -= tengo;
             tengolistas += 1;
         };
-        cout<<tengolistas<<endl;
+        cout<<tengolistas<<"\n";
     };
     return 0;
 };
