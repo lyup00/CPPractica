@@ -16,20 +16,25 @@ int main(){
         }
 
         int suma = k;
-        int otro = 0;
+        int otro = lista.back();
+
+        lista.pop_back();
         int it = 1;
         while(it < lista.size() - 1){
-            if(abs(suma - otro) < suma + lista[it]){
+            if(abs(suma - otro) < suma + lista[it] and it != lista.size()){
                 otro += lista.back();
-                lista.pop_back();
+                if(it>=lista.size()){
+                    lista.pop_back();
+                }
                 cout<<"otroRARO"<<otro<<endl;
-            }
-            else if(suma < ){
-                suma += lista[it];
-                cout<<"sumaIN"<<suma<<endl;
                 it++;
-                cout<<"itIN"<<it<<endl;
             }
+            //else if(suma < lista[it]){
+            //    suma += lista[it];
+            //    cout<<"sumaIN"<<suma<<endl;
+            //    it++;
+            //    cout<<"itIN"<<it<<endl;
+            //}
             else{
                 suma -= lista.back();
                 cout<<"sumaOUT"<<suma<<endl;
