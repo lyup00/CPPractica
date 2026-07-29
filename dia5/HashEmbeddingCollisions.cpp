@@ -8,7 +8,6 @@ int main(){
     cin>>n>>m;
 
     multiset<ll> miset;
-
     for(ll a=0; a<n; ++a){
         cin>>id;
         bucket = id % m;
