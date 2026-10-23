@@ -7,21 +7,25 @@ int main(){
 
     for(int i=0; i<n; i++){
         int t;
-        string a;
-        cin >> t >> a;;
+        cin >> t;
 
         int largo = 0;
         int largomasalto = 0;
 
         for(int e=0; e<t; e++){
-            if(a[e] == '0'){
+            int a;
+            cin >> a;
+            if(a == 0){
                 largo++;
-            }else if(largomasalto < largo){
+            }else if(a == 1 && largomasalto < largo){
                 largomasalto = largo;
                 largo = 0;
             }
         }
-        cout << largo <<endl;
+        if(largomasalto < largo){
+            largomasalto = largo;
+        }
+        cout << largomasalto <<endl;
     }
     return 0;
 }
