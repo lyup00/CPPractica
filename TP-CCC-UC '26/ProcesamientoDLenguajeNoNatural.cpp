@@ -7,18 +7,19 @@ int main(){
 
     for(int i=0; i<n; i++){
         int t;
-        cin >> t;
+        string a;
+        cin >> t >> a;
 
-        int largo = 0;
-        int largomasalto = 0;
-
+        vector<string> mivector;
         for(int e=0; e<t; e++){
-            int a;
-            cin >> a;
+            if(a[e] != 'a' || a[e] != 'e'){
+                
+            }
+            mivector.pushback
             if(a == 0){
                 largo++;
-            }else if(a == 1 && largomasalto < largo){
-                largomasalto = largo;
+            }else{
+                largomasalto = max(largomasalto, largo);
                 largo = 0;
             }
         }
