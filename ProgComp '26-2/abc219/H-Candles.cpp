@@ -7,7 +7,7 @@ int main(){
 
     int cootaka = 0;
     int largototal = 0;
-    for(int i=0; i<n; i++){
+    for(int i=0; i<velas; i++){
         int coovelas, length;
         cin >> coovelas >> length;
 
