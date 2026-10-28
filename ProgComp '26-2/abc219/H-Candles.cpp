@@ -6,17 +6,21 @@ int main(){
     cin >> velas;
 
     int cootaka = 0;
+    int ogcootaka = 0;
     int largototal = 0;
     for(int i=0; i<velas; i++){
         int coovelas, length;
         cin >> coovelas >> length;
 
-        if (coovelas >= 0){
-            largototal = largototal + (length - coovelas);
-        }else{
-            largototal = largototal + (length + coovelas);
+        if(abs(coovelas) < length){
+            cootaka = cootaka + abs(coovelas);
+            cout << length - cootaka - ogcootaka << endl;
+            largototal = largototal + (length - cootaka - ogcootaka);
+            cout << largototal << endl;
+            ogcootaka = cootaka + ogcootaka;
+            cout << ogcootaka << endl;
+            cout << largototal << endl;
         }
-        cootaka = cootaka + coovelas;
     }
     cout << largototal << endl;
     return 0;
