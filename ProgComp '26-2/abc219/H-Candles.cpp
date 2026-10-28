@@ -1,7 +1,8 @@
 #include <bits/stdc++.h>
+#define int long long
 using namespace std;
 
-int main(){
+signed main(){
     int velas;
     cin >> velas;
 
@@ -14,12 +15,8 @@ int main(){
 
         if(abs(coovelas) < length){
             cootaka = cootaka + abs(coovelas);
-            cout << length - cootaka - ogcootaka << endl;
             largototal = largototal + (length - cootaka - ogcootaka);
-            cout << largototal << endl;
             ogcootaka = cootaka + ogcootaka;
-            cout << ogcootaka << endl;
-            cout << largototal << endl;
         }
     }
     cout << largototal << endl;
